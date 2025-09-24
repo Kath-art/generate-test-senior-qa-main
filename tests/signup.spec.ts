@@ -188,6 +188,10 @@ test.describe('Validation coverage where individual "required" fields are empty'
             await expect(joinPage.lastNameWarningMsg).not.toBeVisible()
             await expect(joinPage.productDiscStatementWarningMsg).not.toBeVisible()
             await expect(joinPage.privacyAndDeclarationWarningMsg).not.toBeVisible()
+
+            // Confirm join process moves to the next stage.
+            const address = page.locator('h2');
+            await expect(address).toContainText('Enter your residential address');
         });
     });
 
