@@ -120,7 +120,6 @@ test.describe('Validation coverage where individual "required" fields are empty'
         await joinPage.enterMiddleName('Cakes');
         await joinPage.enterLastName('Stewart');
         await joinPage.enterPreferredName('Baker');
-        await joinPage.enterEmailAddress('triggskatherine@gmail.com');
         await joinPage.enterMobileNumber('215249857');
         await joinPage.checkProductDisclosure();
         await joinPage.checkPrivacyAndDeclaration();
