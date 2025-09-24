@@ -1,10 +1,8 @@
-import {expect, test} from '@playwright/test';
-import {JoinPage} from "./JoinPage";
+import { expect, test } from '@playwright/test';
+import { JoinPage } from "./JoinPage";
+import AxeBuilder from "@axe-core/playwright";
 
-// Validation coverage – Trigger Continue with each
-// required field empty (individually and collectively)
-// and assert the corresponding error messages.
-// Document the final set of validations you cover.
+
 
 test.describe('Validation coverage where individual "required" fields are empty', () => {
     test.beforeEach(async ({page}) => {
@@ -148,6 +146,7 @@ test.describe('Validation coverage where individual "required" fields are empty'
 
         expect(joinPage.dobWarnMsg).toBeVisible();
     });
+});
 
     test.describe('Validation where all required fields are empty', () => {
         test('Show all warning messages when required fields are empty', async ({page}) => {
@@ -196,5 +195,25 @@ test.describe('Validation coverage where individual "required" fields are empty'
     });
 
 
+    test.describe('Check for accessibility issues', () => {
+        test('Confirm the page has no accessibility violations', async ({page}) => {
 
-});
+            // beforeEach takes us to the url under test.
+            const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+
+            if (accessibilityScanResults.violations.length > 0) {
+                console.log(`\nAccessibility issues found: ${accessibilityScanResults.violations.length}`);
+
+                accessibilityScanResults.violations.forEach((violation, i) => {
+                    console.log(`\n${i + 1}. ${violation.id} – ${violation.description}`);
+                    console.log(`   Help: ${violation.helpUrl}`);
+
+                    violation.nodes.forEach((node, j) => {
+                        console.log(`   ${j + 1}) ${node.html}`);
+                    });
+                });
+            }
+        });
+
+    });
+
