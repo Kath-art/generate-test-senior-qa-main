@@ -1,0 +1,54 @@
+Accessibility issues found: 4
+
+1. color-contrast – Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds
+   Help: https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright
+   1) <span class="flex items-center justify-center"><!----><!--[--><!--[--> Login <!--]--><!----><!--]--><!----></span>
+   2) <p class="text-mf-green-00 font-gilroy text-3xl font-extrabold leading-none tracking-normal md:text-4xl lg:text-5xl">Join Generate Managed Funds</p>
+   3) <p class="text-mf-green-00 font-gilroy text-3xl font-extrabold leading-none tracking-normal md:text-4xl lg:text-5xl">Adviser login</p>
+   4) <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-sm font-semibold text-generate-blue-00">Personal Details</span>
+   5) <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-sm font-semibold text-generate-blue-00">Your Address</span>
+   6) <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-sm font-semibold text-generate-blue-00">Your KiwiSaver</span>
+   7) <h1 class="text-3xl lg:text-6xl font-gilroy font-extrabold leading-[1.2] mb-4 xl:mb-6 text-generate-blue-00 font-normal"><!--[--> Join the Generate KiwiSaver Scheme <!--]--></h1>
+   8) <h5 class="text-lg xl:text-xl font-open-sans font-bold leading-[140%] md:leading-[140%] xl:leading-[140%] mb-3.5 md:mb-4 xl:mb-5 text-white font-normal mb-4 md:mb-5 xl:mb-6"><!--[-->Explore<!--]--></h5>
+   9) <p class="text-base leading-7 font-normal mb-7 text-white font-open-sans last:mb-0"><!--[-->KiwiSaver Scheme<!--]--></p>
+   10) <p class="text-base leading-7 font-normal mb-7 text-white font-open-sans last:mb-0"><!--[-->Managed Funds<!--]--></p>
+   11) <p class="text-base leading-7 font-normal mb-7 text-white font-open-sans last:mb-0"><!--[-->News and guides<!--]--></p>
+   12) <p class="text-base leading-7 font-normal mb-7 text-white font-open-sans last:mb-0"><!--[-->Tools and calculators<!--]--></p>
+   13) <h5 class="text-lg xl:text-xl font-open-sans font-bold leading-[140%] md:leading-[140%] xl:leading-[140%] mb-3.5 md:mb-4 xl:mb-5 text-white font-normal mb-4 md:mb-5 xl:mb-6"><!--[-->About<!--]--></h5>
+   14) <p class="text-base leading-7 font-normal mb-7 text-white font-open-sans last:mb-0"><!--[-->Why Generate<!--]--></p>
+   15) <p class="text-base leading-7 font-normal mb-7 text-white font-open-sans last:mb-0"><!--[-->Responsible investing<!--]--></p>
+   16) <p class="text-base leading-7 font-normal mb-7 text-white font-open-sans last:mb-0"><!--[-->Careers<!--]--></p>
+   17) <p class="text-base leading-7 font-normal mb-7 text-white font-open-sans last:mb-0"><!--[-->Partner with Generate<!--]--></p>
+   18) <h5 class="text-lg xl:text-xl font-open-sans font-bold leading-[140%] md:leading-[140%] xl:leading-[140%] mb-3.5 md:mb-4 xl:mb-5 text-white font-normal mb-4 md:mb-5 xl:mb-6"><!--[-->Legal<!--]--></h5>
+   19) <p class="text-base leading-7 font-normal mb-7 text-white font-open-sans last:mb-0"><!--[-->Advertising disclosures<!--]--></p>
+   20) <p class="text-base leading-7 font-normal mb-7 text-white font-open-sans last:mb-0"><!--[-->Privacy Statement<!--]--></p>
+   21) <p class="text-base leading-7 font-normal mb-7 text-white font-open-sans last:mb-0"><!--[-->Prize draw terms and conditions<!--]--></p>
+   22) <p class="text-base leading-7 font-normal mb-7 text-white font-open-sans last:mb-0"><!--[-->Financial Advice Provider (FAP) disclosure<!--]--></p>
+   23) <p class="text-base leading-7 font-normal mb-7 text-white font-open-sans last:mb-0"><!--[-->KiwiSaver Product Disclosure Statement (PDS)<!--]--></p>
+   24) <p class="text-base leading-7 font-normal mb-7 text-white font-open-sans last:mb-0"><!--[-->Managed Funds Product Disclosure Statement (PDS)<!--]--></p>
+   25) <h5 class="text-lg xl:text-xl font-open-sans font-bold leading-[140%] md:leading-[140%] xl:leading-[140%] mb-3.5 md:mb-4 xl:mb-5 text-white font-normal mb-4 md:mb-5 xl:mb-6"><!--[-->Help<!--]--></h5>
+   26) <p class="text-base leading-7 font-normal mb-7 text-white font-open-sans last:mb-0"><!--[-->Frequently asked questions<!--]--></p>
+   27) <p class="text-base leading-7 font-normal mb-7 text-white font-open-sans last:mb-0"><!--[-->Documents and forms<!--]--></p>
+   28) <p class="text-base leading-7 font-normal mb-7 text-white font-open-sans last:mb-0"><!--[-->Contact us<!--]--></p>
+   29) <p class="text-base leading-7 font-normal mb-7 text-white font-open-sans last:mb-0"><!--[-->Complaints<!--]--></p>
+   30) <h5 class="text-lg xl:text-xl font-open-sans font-bold leading-[140%] md:leading-[140%] xl:leading-[140%] mb-3.5 md:mb-4 xl:mb-5 text-white font-normal mb-4 md:mb-5 xl:mb-6"><!--[-->Follow us at<!--]--></h5>
+   31) <span class="font-open-sans text-xs leading-5 font-semibold">
+   32) <a href="/file/doc/kiwisaver-pds" target="_blank" class="font-open-sans text-xs leading-5 font-semibold text-white underline transition duration-300 cursor-pointer">Generate KiwiSaver Scheme Product Disclosure Statement</a>
+   33) <a href="/file/doc/managed-funds-pds" target="_blank" class="font-open-sans text-xs leading-5 font-semibold text-white underline transition duration-300 cursor-pointer">Generate Unit Trust Scheme (Managed Funds) Product Disclosure Statement</a>
+   34) <p class="text-xs leading-5 font-semibold mb-5 text-white tracking-wide font-open-sans last:mb-0"><!--[--> © Generate 2025<!--]--></p>
+
+2. heading-order – Ensure the order of headings is semantically correct
+   Help: https://dequeuniversity.com/rules/axe/4.10/heading-order?application=playwright
+   1) <h3 class="text-2xl md:text-3xl font-gilroy font-extrabold leading-[120%] md:leading-[120%] xl:leading-[120%] mb-8 xl:mb-14 text-ks-blue-00 font-normal"><!--[--> Tell us a bit about you <!--]--></h3>
+   2) <h5 class="text-lg xl:text-xl font-open-sans font-bold leading-[140%] md:leading-[140%] xl:leading-[140%] mb-3.5 md:mb-4 xl:mb-5 text-white font-normal mb-4 md:mb-5 xl:mb-6"><!--[-->Explore<!--]--></h5>
+
+3. label – Ensure every form element has a label
+   Help: https://dequeuniversity.com/rules/axe/4.10/label?application=playwright
+   1) <input id="countryCode" type="number" data-testid="CountryCode" name="countryCode" class="placeholder:text-typography-disabled w-full rounded border border-solid transition-colors focus:outline-none block py-4 pl-6 pr-3.5 py-3 border-interaction-border-default hover:border-interaction-hover focus:border-interaction-pressed" value="64" data-maska-value="64" data-gtm-processed="true">
+   2) <input id="mobileNumber" type="number" data-testid="MobileNumber" name="mobileNumber" class="placeholder:text-typography-disabled w-full rounded border border-solid transition-colors focus:outline-none block py-4 px-3.5 py-3 border-interaction-border-default hover:border-interaction-hover focus:border-interaction-pressed" value="" data-gtm-processed="true">
+
+4. link-name – Ensure links have discernible text
+   Help: https://dequeuniversity.com/rules/axe/4.10/link-name?application=playwright
+   1) <a href="/search/" class="">
+   2) <a href="https://auth.generatewealth.co.nz/" rel="noopener noreferrer" target="_self">
+   3) <a href="https://generatecommunity.force.com" rel="noopener noreferrer" target="_self">

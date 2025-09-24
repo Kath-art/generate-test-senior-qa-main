@@ -12,7 +12,9 @@ export class JoinPage {
     emailAddress: Locator;
     mobileNumber: Locator;
     productDiscStatementChk: Locator;
+    visibleProductDiscStatementChk: Locator;
     privacyAndDeclarationChk: Locator;
+    visiblePrivacyAndDeclarationChk: Locator;
     smsConsentChk: Locator;
     continueBtn: Locator;
     dobWarnMsg: Locator;
@@ -25,26 +27,34 @@ export class JoinPage {
 
     constructor (page: Page) {
         this.page = page;
-        this.customerTitle = page.getByLabel('field_title');
+        this.customerTitle = page.locator('div[name="title"] div[tabindex="0"]');
         this.gender = page.getByText('Select gender');
-        this.dateOfBirth = page.getByRole('textbox', {name: 'DD/MM/YYYY'});
-        this.firstName = page.getByRole('textbox', {name: 'First name (required)'});
-        this.middleName = page.getByRole('textbox', {name: 'Middle name(s)'});
-        this.lastName = page.getByRole('textbox', {name: 'Preferred name'});
-        this.preferredName = page.getByRole('textbox', {name: 'Preferred name'});
-        this.emailAddress = page.getByRole('textbox', {name: 'Email address (required)'});
+        this.dateOfBirth = page.getByRole('textbox', { name: 'DD/MM/YYYY'});
+        this.firstName = page.getByRole('textbox', { name: 'First name (required)'});
+        this.middleName = page.getByRole('textbox', { name: 'Middle name(s)'});
+        this.lastName = page.getByRole('textbox', { name: 'Last name (required)'});
+        this.preferredName = page.getByRole('textbox', { name: 'Preferred name'});
+        this.emailAddress = page.getByRole('textbox', { name: 'Email address (required)'});
         this.mobileNumber = page.getByTestId('MobileNumber');
-        this.productDiscStatementChk = page.locator('#field_agreeStatus\\[0\\]');
-        this.privacyAndDeclarationChk = page.locator('#field_agreeStatus\\[1\\]');
-        this.smsConsentChk = page.getByText(' I consent to receive SMS messages from Generate');
-        this.continueBtn = page.getByRole('button', {name: 'Continue'});
+
+        this.productDiscStatementChk = page.locator('label:has(input#field_agreeStatus\\[0\\])');
+        this.visibleProductDiscStatementChk = page.locator('input#field_agreeStatus\\[0\\]'); // verify product disclosure checkbox is now visible
+
+        this.privacyAndDeclarationChk = page.locator('label:has(input#field_agreeStatus\\[1\\])');
+        // this.visiblePrivacyAndDeclarationChk = page.locator('input#field_agreeStatus\\[1\\]'); // verify privacy and declaration checkbox is visible
+        this.visiblePrivacyAndDeclarationChk = page.locator('input#field_agreeStatus\\[1\\]'); // verify privacy and declaration checkbox is visible
+
+        this.smsConsentChk = page.locator('label:has(input#field_smsConsent)');
+
+        this.continueBtn = page.getByRole('button', { name: 'Continue'});
+
         this.dobWarnMsg = page.getByText('Incorrect or empty Date of birth');
         this.firstNameWarnMessage = page.getByText('First name is a required field');
-        this.lastNameWarningMsg = page.getByText('Incorrect or empty Date of birth');
+        this.lastNameWarningMsg = page.getByText('Last name is a required field');
         this.emailAddressWarningMsg = page.getByText('Email is a required field');
         this.mobileNumberWarningMsg = page.getByText('Mobile number is a required field');
-        this.productDiscStatementWarningMsg = page.getByText('Please confirm that you have read the about');
-        this.privacyAndDeclarationWarningMsg = page.getByText('Please confirm that you have read the about');  // todo, these shouldn't be the same.. maybe use the array index?
+        this.productDiscStatementWarningMsg = page.locator('div[has-error="true"]').nth(0).locator('p:has-text("Please confirm that you have read the above")');
+        this.privacyAndDeclarationWarningMsg = page.locator('div[has-error="true"]').nth(1).locator('p:has-text("Please confirm that you have read the above")');
     }
 
     async selectTitle(title: string) {
@@ -57,8 +67,9 @@ export class JoinPage {
         await this.page.getByTestId(gender).click();
     }
 
-    async enterDOB(dateOfBirth : string) {
-        await this.dateOfBirth.fill(dateOfBirth);
+    async enterDOB(dobValue : string) {
+        await this.dateOfBirth.fill(dobValue);
+        await this.dateOfBirth.press('Enter');
     }
 
     async enterFirstName(firstName: string) {
@@ -86,18 +97,15 @@ export class JoinPage {
     }
 
     async checkProductDisclosure() {
-        await this.productDiscStatementChk.isVisible();
-        this.productDiscStatementChk.check();
+        await this.productDiscStatementChk.click(); // click instead of check for pseudo classes.
     }
 
     async checkPrivacyAndDeclaration() {
-        await this.privacyAndDeclarationChk.isVisible();
-        this.privacyAndDeclarationChk.check();
+        await this.privacyAndDeclarationChk.click();
     }
 
     async checkSmsConsent() {
-        await this.smsConsentChk.isVisible();
-        this.smsConsentChk.check();
+        this.smsConsentChk.click();
     }
 
     async clickContinue() {
